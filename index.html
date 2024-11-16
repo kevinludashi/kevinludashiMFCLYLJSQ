@@ -275,6 +275,14 @@
         calcMethod = select.value;
         resetAllCalculators();
         updateCalculationFormulas();
+    
+        // 清空所有计算器，只保留第一个
+        const calculators = document.querySelectorAll('.calculator');
+        calculators.forEach((calculator, index) => {
+            if (index > 0) {
+                calculator.remove();
+            }
+        });
     }
 
     function updateCalculationFormulas() {
